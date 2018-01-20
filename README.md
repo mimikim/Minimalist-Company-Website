@@ -1,7 +1,7 @@
 # Minimalist Company Website
 
 ## Link
-[Demo Link](http://www.google.com)
+[Demo Link](https://mimikim.github.io/Minimalist-Company-Website/)
 
 ## Description
 A single-page brochure website built with Angular v5.2, created with Angular CLI. 
