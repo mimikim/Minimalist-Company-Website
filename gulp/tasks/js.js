@@ -10,8 +10,8 @@ module.exports = function() {
     .pipe( jshint() )
     .pipe( jshint.reporter( 'default' ) )
     .pipe( concat( 'scripts.js' ) )
-    .pipe( rename( 'scripts.min.js' ) )
     .pipe( uglify() )
+    .pipe( rename( 'scripts.min.js' ) )
     .pipe( gulp.dest( 'src/assets/js' ) )
     .pipe( notify( { message: 'JS task complete' } ) );
 };

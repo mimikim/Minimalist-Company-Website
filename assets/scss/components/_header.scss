@@ -6,6 +6,11 @@
   cursor: pointer;
 
   &:active,
+  &:focus {
+    outline: dotted;
+  }
+
+  &:active,
   &:focus,
   &:hover {
     background-image: url( '../svg/cactus-text.svg' );
@@ -33,9 +38,89 @@
   margin-bottom: 0;
   margin-top: 0;
   padding-left: 0;
+  display: none;
+  transition: all 0.4s linear;
+
+  @media ( min-width: $mobile ) {
+    display: block;
+  }
 
   > li {
     display: inline-block;
+
+    a {
+      display: block;
+    }
   }
 }
 
+// opened mobile menu
+.navigation-container > .navigation.opened {
+  background: $sunyellow;
+  border-top: 5px solid $black;
+  display: block;
+  left: 0;
+  padding-top: 40px;
+  position: absolute;
+  height: 100%;
+  right: 0;
+  top: 56px;
+  width: 100%;
+
+  > li {
+    display: block;
+    margin-bottom: 10px;
+    text-align: center;
+
+    a {
+      font-size: 30px;
+      padding-bottom: 10px;
+      padding-top: 10px;
+    }
+  }
+}
+
+.navigation-toggle {
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  padding: 0;
+  position: relative;
+  width: 50px;
+
+  @media ( min-width: $mobile ) {
+    display: none;
+  }
+
+  > span.line {
+    background: $black;
+    display: block;
+    height: 5px;
+    width: 100%;
+    margin-bottom: 6px;
+    transition: all 0.2s linear;
+
+    &:nth-of-type(4) {
+      margin-bottom: 0;
+    }
+  }
+}
+
+// opened mobile menu
+.navigation-toggle.opened {
+  > span.line {
+    position: absolute;
+
+    &:nth-of-type(2) {
+      transform: rotate( 45deg );
+    }
+
+    &:nth-of-type(3) {
+      display: none;
+    }
+
+    &:nth-of-type(4) {
+      transform: rotate( -45deg );
+    }
+  }
+}

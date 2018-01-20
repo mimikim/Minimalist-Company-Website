@@ -8,7 +8,16 @@
                 <h1 class="screen-reader-text">Company Name</h1>
             </a>
 
-            <ul class="navigation" role="navigation" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
+            <button id="js-navigation-toggle" class="navigation-toggle" aria-expanded="false">
+                <span class="screen-reader-text">
+                    Mobile Navigation Toggle
+                </span>
+                <span class="line" aria-hidden="true"></span>
+                <span class="line" aria-hidden="true"></span>
+                <span class="line" aria-hidden="true"></span>
+            </button>
+
+            <ul id="js-navigation" class="navigation" role="navigation" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
                 <li>
                     <a mat-button [routerLink]="['about']" routerLinkActive="active">About Us</a>
                 </li>
