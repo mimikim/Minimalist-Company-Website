@@ -10,10 +10,14 @@ app-root {
 }
 
 body {
+  background: url( '../images/swirl_pattern.png' );
   font-family: 'Open Sans', sans-serif;
   margin: 0;
-  overflow: hidden;
   font-size: 20px;
+
+  @media ( min-width: 500px ) {
+    overflow: hidden;
+  }
 }
 
 a {
@@ -27,9 +31,4 @@ h4,
 h5,
 h6 {
   font-family: 'Neuton', serif;
-}
-
-.main-container {
-  background: url( '../images/swirl_pattern.png' );
-  height: 100%;
 }
