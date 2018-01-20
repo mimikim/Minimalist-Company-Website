@@ -1,0 +1,37 @@
+<main role="main" class="main-container">
+
+    <mat-toolbar>
+
+        <div class="navigation-container">
+
+            <a mat-button [routerLink]="['home']" class="site-logo" itemscope itemtype="http://schema.org/Organization">
+                <h1 class="screen-reader-text">Company Name</h1>
+            </a>
+
+            <ul class="navigation" role="navigation" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
+                <li>
+                    <a mat-button [routerLink]="['about']" routerLinkActive="active">About Us</a>
+                </li>
+                <li>
+                    <a mat-button [routerLink]="['our-work']" routerLinkActive="active">Our Work</a>
+                </li>
+                <li>
+                    <a mat-button [routerLink]="['contact']" routerLinkActive="active">Contact</a>
+                </li>
+            </ul>
+
+        </div>
+
+    </mat-toolbar>
+
+    <section class="page-container">
+
+        <router-outlet></router-outlet>
+
+    </section>
+
+</main>
+
+<footer class="site-footer">
+    &copy; 2018 Mimi Kim | <a href="http://www.seeyouspacecow.com" target="_blank">See You Space Cow</a>
+</footer>

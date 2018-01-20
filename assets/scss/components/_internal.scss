@@ -1,0 +1,59 @@
+// page content
+
+#js-cactus {
+  background-position: 0;
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 180px;
+
+  &.cactus1 {
+    background-image: url( '../svg/cactus.svg' );
+  }
+
+  &.cactus2 {
+    background-image: url( '../svg/cactus2.svg' );
+  }
+
+  &.cactus3 {
+    background-image: url( '../svg/cactus3.svg' );
+  }
+
+  &.flower {
+    background-image: url( '../svg/flower.svg' );
+  }
+}
+
+.page-container {
+  @extend .container;
+  padding-top: 45px;
+  max-width: 992px;
+  transition: all 0.3s linear;
+
+  @media ( min-width: $mobile ) {
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 65px;
+  }
+
+  > svg {
+    max-width: 180px;
+  }
+}
+
+.page-container > app-page {
+  @media ( min-width: $mobile ) {
+    display: flex;
+  }
+}
+
+.page-container .page-content {
+  flex: 1 0 0;
+
+  @media ( min-width: $mobile ) {
+    padding-left: 45px;
+  }
+}
+

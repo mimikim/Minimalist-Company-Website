@@ -1,0 +1,41 @@
+// header & navigation
+.site-logo {
+  background: $sunyellow url('../svg/hangul.svg') 0/contain no-repeat;
+  height: 37px;
+  width: 104px;
+  cursor: pointer;
+
+  &:active,
+  &:focus,
+  &:hover {
+    background-image: url( '../svg/cactus-text.svg' );
+  }
+
+  > .mat-button-focus-overlay {
+    display: none;
+  }
+}
+
+.mat-toolbar {
+  background: $sunyellow;
+}
+
+.navigation-container {
+  @extend .container;
+  display: flex;
+  font-family: 'Neuton', serif;
+  justify-content: space-between;
+  max-width: 1200px;
+}
+
+.navigation-container > .navigation {
+  list-style: none;
+  margin-bottom: 0;
+  margin-top: 0;
+  padding-left: 0;
+
+  > li {
+    display: inline-block;
+  }
+}
+

@@ -1,0 +1,26 @@
+// footer
+.site-footer {
+  font-size: 14px;
+  padding: 15px;
+  text-align: center;
+
+  @media ( min-width: $mobile ) {
+    bottom: 0;
+    font-size: 16px;
+    position: fixed;
+    right: 0;
+    text-align: right;
+  }
+
+  > a {
+    color: $floralred;
+    transition: color 0.2s linear;
+
+    &:focus,
+    &:active,
+    &:hover {
+      color: darken( $floralred, 30 );
+    }
+  }
+
+}
