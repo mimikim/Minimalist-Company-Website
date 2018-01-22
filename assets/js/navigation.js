@@ -4,19 +4,19 @@
 
 ( function() {
 
-  window.onload = function() {
+  window.onload = () => {
 
-    var navToggle = document.getElementById( 'js-navigation-toggle' );
-    var navContainer = document.getElementById( 'js-navigation' );
-    var navLinks = document.querySelectorAll( '#js-navigation a.mat-button' );
-    var desktopBreakpoint = 500;
+    const navToggle = document.getElementById( 'js-navigation-toggle' );
+    const navContainer = document.getElementById( 'js-navigation' );
+    const navLinks = document.querySelectorAll( '#js-navigation a.mat-button' );
+    const desktopBreakpoint = 500;
 
     // bail if no toggle
     if ( ! navToggle ) {
       return;
     }
 
-    var openMenu = function() {
+    const openMenu = () => {
       navToggle.classList.add( 'opened' );
       navContainer.classList.add( 'opened' );
 
@@ -24,7 +24,7 @@
       navContainer.setAttribute( 'aria-hidden', 'false' );
     };
 
-    var closeMenu = function() {
+    const closeMenu = () => {
       navToggle.classList.remove( 'opened' );
       navContainer.classList.remove( 'opened' );
 
@@ -33,11 +33,11 @@
     };
 
     // close menu if you hit ESC
-    var maybeOpenCloseMenu = function( e ) {
+    const maybeOpenCloseMenu = ( e ) => {
 
-      var containsOpened = navContainer.classList.contains( 'opened' );
-      var isKeyUp = ( e.type === 'keyup' );
-      var isMouseUp = ( e.type === 'mouseup' );
+      const containsOpened = navContainer.classList.contains( 'opened' );
+      let isKeyUp = ( e.type === 'keyup' );
+      let isMouseUp = ( e.type === 'mouseup' );
 
       // if menu is opened
       if ( containsOpened ) {
@@ -74,12 +74,12 @@
     document.addEventListener( 'keyup', maybeOpenCloseMenu );
 
     // close menu when clicked on a link
-    for ( var i = 0; i < navLinks.length; i++ ) {
-      navLinks[ i ].addEventListener( 'click', closeMenu );
-    }
+    navLinks.forEach( link => {
+      link.addEventListener( 'click', closeMenu );
+    } );
 
     // remove opened classes if window expands beyond mobile width
-    window.addEventListener( 'resize', function() {
+    window.addEventListener( 'resize', () => {
       if ( window.innerWidth >= desktopBreakpoint ) {
         closeMenu();
         navContainer.removeAttribute( 'aria-hidden' );
